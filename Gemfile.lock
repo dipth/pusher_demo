@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/plataformatec/simple_form.git
+  revision: 01ba454502f71390e7887b92be3f12a0a2cf67d7
+  specs:
+    simple_form (2.0.0.dev)
+      actionpack (~> 3.0)
+      activemodel (~> 3.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -31,6 +39,7 @@ GEM
       multi_json (~> 1.0)
     ansi (1.4.0)
     arel (2.2.1)
+    bcrypt-ruby (3.0.1)
     builder (3.0.0)
     coffee-rails (3.1.1)
       coffee-script (>= 2.2.0)
@@ -110,10 +119,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt-ruby
   coffee-rails (~> 3.1.1)
   jquery-rails
   rails (= 3.1.1)
   sass-rails (~> 3.1.4)
+  simple_form!
   sqlite3
   turn
   uglifier (>= 1.0.3)
