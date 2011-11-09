@@ -8,7 +8,20 @@
 </head>
 <body>
 
-<%= yield %>
+  <div class="topbar">
+    <div class="fill">
+      <div class="container">
+        <%= render 'layouts/top_bar' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <%= render 'layouts/flash_messages' %>
+  </div>
+  <div class="container">
+    <%= yield %>
+  </div>
 
 </body>
 </html>

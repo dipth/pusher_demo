@@ -1,0 +1,6 @@
+<% flash.each do |key, msg| %>
+  <div class="alert-message <%= bootstrap_flash_key_for(key) %> fade in" data-alert="alert">
+    <a class="close" href="#">×</a>
+    <p><%= msg %></p>
+  </div>
+<% end %>
