@@ -1,0 +1,13 @@
+<%= simple_form_for :session, :url => session_path, :wrapper => :inline do |f| %>
+  <% if f.error_notification %>
+    <div class="alert-message warning fade in" data-alert="alert">
+      <a class="close" href="#">×</a>
+      <p><%= f.error_notification %></p>
+    </div>
+  <% end %>
+  <%= f.input :username %>
+  <%= f.input :password %>
+  <div class="actions">
+    <%= f.button :submit, :class => 'primary', :id => "commit" %>
+  </div>
+<% end %>

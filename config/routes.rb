@@ -1,6 +1,7 @@
 PusherDemo::Application.routes.draw do
 
   resources :users
+  resource :session
 
   root :to => 'welcome#index'
 
