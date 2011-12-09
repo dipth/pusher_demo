@@ -3,6 +3,11 @@ PusherDemo::Application.routes.draw do
   resources :users
   resource :session
   resource :profile
+  resources :messages do |messages|
+    collection do
+      get :sent
+    end
+  end
 
   root :to => 'welcome#index'
 

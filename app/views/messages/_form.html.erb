@@ -1,0 +1,14 @@
+<%= simple_form_for @message, :wrapper => :inline do |f| %>
+  <% if f.error_notification %>
+    <div class="alert-message warning fade in" data-alert="alert">
+      <a class="close" href="#">×</a>
+      <p><%= f.error_notification %></p>
+    </div>
+  <% end %>
+  <%= f.association :recipient, :input_html => {:class => "span12"}, :collection => @users %>
+  <%= f.input :subject, :input_html => {:class => "span12"} %>
+  <%= f.input :body, :input_html => {:class => "span12"} %>
+  <div class="actions">
+    <%= f.button :submit, :class => 'primary', :id => "commit" %>
+  </div>
+<% end %>
