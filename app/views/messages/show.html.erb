@@ -1,0 +1,15 @@
+<%= render 'menu' %>
+<h1>Message</h1>
+
+<dl>
+  <dt>From:</dt>
+  <dd><%= @message.sender.username %></dd>
+  <dt>To:</dt>
+  <dd><%= @message.recipient.username %></dd>
+  <dt>Date sent:</dt>
+  <dd><%=l @message.created_at, :format => :long %></dd>
+</dl>
+
+<blockquote>
+  <%= @message.body %>
+</blockquote>

@@ -1,43 +1,23 @@
 <table class="bordered-table zebra-striped">
   <thead>
     <tr>
-      <th>#</th>
-      <th>To</th>
+      <th><%= context == 'received' ? 'From' : 'To' %></th>
       <th>Subject</th>
       <th>Date</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>1</td>
-      <td>Some</td>
-      <td>One</td>
-      <td>English</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Joe</td>
-      <td>Sixpack</td>
-      <td>English</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Stu</td>
-      <td>Dent</td>
-      <td>Code</td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        span 4 columns
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2">
-        span 2 columns
-      </td>
-      <td colspan="2">
-        span 2 columns
-      </td>
-    </tr>
+    <% @messages.each do |message| %>
+      <tr>
+        <td><%= context == 'received' ? message.sender.username : message.recipient.username %></td>
+        <td><%= message.subject %></td>
+        <td><%=l message.created_at, :format => :long %></td>
+        <td>
+          <%= link_to "Read", message %>
+          <%= link_to "Delete", message, :method => :delete, :confirm => "Are you sure?" %>
+        </td>
+      </tr>
+    <% end %>
   </tbody>
 </table>

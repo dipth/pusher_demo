@@ -2,4 +2,8 @@
   <%= link_to "Inbox", messages_path, :class => "btn" %>
   <%= link_to "Sent", sent_messages_path, :class => "btn" %>
   <%= link_to "Compose", new_message_path, :class => "btn primary" %>
+  <% if @message.present? &&  @message.sender != current_user %>
+    <%= link_to "Reply", new_message_path(:recipient_id => @message.sender_id), :class => "btn success" %>
+    <%= link_to "Delete", @message, :method => :delete, :confirm => "Are you sure?", :class => "btn danger" %>
+  <% end %>
 </div>

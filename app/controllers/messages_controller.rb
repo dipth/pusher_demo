@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
   end
 
   def new
-    @message = current_user.sent_messages.new
+    @message = current_user.sent_messages.new(:recipient_id => params[:recipient_id])
     find_users
   end
 
@@ -21,6 +21,16 @@ class MessagesController < ApplicationController
       find_users
       render :action => 'new'
     end
+  end
+
+  def show
+    @message = Message.by_user(current_user).find(params[:id])
+  end
+
+  def destroy
+    @message = Message.by_user(current_user).find(params[:id])
+    @message.destroy
+    redirect_to messages_url, :notice => "The message was deleted!"
   end
 
   protected
