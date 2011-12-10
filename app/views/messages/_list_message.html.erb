@@ -1,0 +1,9 @@
+<tr>
+  <td><%= context == 'received' ? list_message.sender.username : list_message.recipient.username %></td>
+  <td><%= list_message.subject %></td>
+  <td><%=l list_message.created_at, :format => :long %></td>
+  <td>
+    <%= link_to "Read", list_message %>
+    <%= link_to "Delete", list_message, :method => :delete, :confirm => "Are you sure?" %>
+  </td>
+</tr>

@@ -8,16 +8,6 @@
     </tr>
   </thead>
   <tbody>
-    <% @messages.each do |message| %>
-      <tr>
-        <td><%= context == 'received' ? message.sender.username : message.recipient.username %></td>
-        <td><%= message.subject %></td>
-        <td><%=l message.created_at, :format => :long %></td>
-        <td>
-          <%= link_to "Read", message %>
-          <%= link_to "Delete", message, :method => :delete, :confirm => "Are you sure?" %>
-        </td>
-      </tr>
-    <% end %>
+    <%= render :partial => 'list_message', :collection => @messages, :locals => {:context => context} %>
   </tbody>
 </table>
