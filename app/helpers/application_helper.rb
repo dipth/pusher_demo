@@ -5,7 +5,9 @@ module ApplicationHelper
   end
 
   def messages_link(text, options = {})
-    link_to unread_messages_count > 0 ? "#{text} <span class=\"label important unreadMessages\">#{unread_messages_count}</span>".html_safe : text,
+    class_names = "unreadMessages label"
+    class_names << " important" if unread_messages_count > 0
+    link_to "#{text} <span class=\"#{class_names}\">#{unread_messages_count}</span>".html_safe,
             messages_path, options
   end
 
