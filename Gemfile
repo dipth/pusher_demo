@@ -8,6 +8,7 @@ gem 'rails', '3.1.1'
 gem 'sqlite3'
 gem 'bcrypt-ruby'
 gem 'simple_form', :git => 'https://github.com/plataformatec/simple_form.git'
+gem 'pusher'
 
 # Gems used only for assets and not required
 # in production environments by default.
