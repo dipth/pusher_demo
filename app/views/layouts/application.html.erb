@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script type="text/javascript">
+    window.pusher_key = '<%= ENV['PUSHER_KEY'] %>';
+  </script>
   <title>PusherDemo</title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "http://js.pusherapp.com/1.9/pusher.min.js", "application" %>
