@@ -5,3 +5,7 @@
 $ ->
   window.broadcast_channel.bind 'total_messages_changed', (event) ->
     $('#total_messages').html(event.value)
+
+  if window.private_channel
+    window.private_channel.bind 'unread_messages_changed', (event) ->
+      $('.unreadMessages').html(event.value).addClass('important')
