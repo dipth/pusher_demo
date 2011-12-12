@@ -9,3 +9,9 @@ $ ->
   if window.private_channel
     window.private_channel.bind 'unread_messages_changed', (event) ->
       $('.unreadMessages').html(event.value).addClass('important')
+
+    window.private_channel.bind 'new_message', (event) ->
+      $.gritter.add
+        title: "You've received a new message from " + event.sender
+        text: '<blockquote>' + event.excerpt + '</blockquote><a href="' + event.url + '" class="btn success small">Read</a>'
+        sticky: true
