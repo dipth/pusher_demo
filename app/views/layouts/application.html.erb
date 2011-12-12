@@ -3,6 +3,7 @@
 <head>
   <script type="text/javascript">
     window.pusher_key = '<%= ENV['PUSHER_KEY'] %>';
+    <%= "window.user_id = #{current_user.id};" if current_user %>
   </script>
   <title>PusherDemo</title>
   <%= stylesheet_link_tag    "application" %>
