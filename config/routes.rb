@@ -9,6 +9,8 @@ PusherDemo::Application.routes.draw do
     end
   end
 
+  match 'pusher/auth' => 'pusher#auth'
+
   root :to => 'welcome#index'
 
   # The priority is based upon order of creation:
