@@ -12,3 +12,5 @@
 
 window.pusher = new Pusher(window.pusher_key);
 window.broadcast_channel = pusher.subscribe('broadcast');
+if (window.user_id)
+  window.private_channel = pusher.subscribe('private-user_' + window.user_id);
