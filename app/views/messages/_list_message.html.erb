@@ -1,4 +1,7 @@
 <tr>
+  <td>
+    <% if list_message.is_unread? %><span class="label success">Unread</span><% end %>
+  </td>
   <td><%= context == 'received' ? list_message.sender.username : list_message.recipient.username %></td>
   <td><%= list_message.subject %></td>
   <td><%=l list_message.created_at, :format => :long %></td>
