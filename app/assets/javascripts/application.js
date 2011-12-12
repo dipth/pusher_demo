@@ -7,4 +7,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-alerts
+//= require jquery.gritter
 //= require_tree .
