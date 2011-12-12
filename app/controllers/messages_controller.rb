@@ -25,6 +25,9 @@ class MessagesController < ApplicationController
 
   def show
     @message = Message.by_user(current_user).find(params[:id])
+    if @message.recipient == current_user && @message.is_unread?
+      @message.read!
+    end
   end
 
   def destroy
