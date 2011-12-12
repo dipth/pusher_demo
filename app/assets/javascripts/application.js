@@ -9,3 +9,6 @@
 //= require bootstrap-alerts
 //= require jquery.gritter
 //= require_tree .
+
+window.pusher = new Pusher(window.pusher_key);
+window.broadcast_channel = pusher.subscribe('broadcast');
