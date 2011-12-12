@@ -8,5 +8,11 @@
     Sed in flank officia irure, nisi sint est. Magna in pork aute. Magna brisket
     beef ribs fatback, consequat short ribs ground round.
   </p>
-  <p><%= link_to "Sign up now »", new_user_path, :class => "btn primary large" %></p>
+  <p>
+    <% unless current_user %>
+      <%= link_to "Sign up now »", new_user_path, :class => "btn primary large" %>
+    <% else %>
+      <%= link_to "Send a message »", new_user_path, :class => "btn success large" %>
+    <% end %>
+  </p>
 </div>
